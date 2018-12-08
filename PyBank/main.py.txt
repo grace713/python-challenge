@@ -1,0 +1,49 @@
+import csv
+from statistics import mean
+import os
+
+filename = os.path.join('raw_data',  'budget_data.csv')
+newfile = os.path.join('raw_data', "PyBank")
+
+with open(filename, 'r', newlines='', encoding='latin-1') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+
+
+    storage = {}
+    monthChange = []
+    final = {}
+    answer = []
+
+    for row in csvreader:
+        if row{0} != 'Date':
+            storage[row [0]] = int(row [1])
+
+    totalMonths = len(storage)
+    total = sum (storage.values())
+    average = tuple(storage.values())
+    months = tuple(storage.keys())
+
+    for x in range(1, (len(average))):
+        monthChange.append((int(average[x-1])))
+
+    average = round(mean(monthChange))
+
+    for x in range(1, (len(month))):
+        final [month[x]] = int(monthChange[x-1])
+
+    maxIncrease = max(zip(final.value(), final.key()))
+    minDecrease = min(zip(final.value(), final.keys()))
+
+    answer.append('Financial Analysis')
+    answer.append('----------------------------')
+    answer.append('Total Months: ' + str(totalMonth))
+    answer.append('Total: $' +str(totalRevenue))
+    answer.append('Average Change: $' +)str(total(average))
+    answer.append('Greatest Increase in Profits: ' + str(maxIncrease[1]) + ' ($' + str(maxIncrease[0]) + ')')
+    answer.append('Greatest Decrease in Protits: ' + str(minDecrease[1]) + ' ($' + str(minDecrease[0]) + ')')
+
+
+    print("\n".join((answer)))
+
+ with open(newfile, 'w') as txtfile:
+     txtfile.write('\n'.join(answer))   
